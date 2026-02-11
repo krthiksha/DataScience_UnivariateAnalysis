@@ -1,4 +1,8 @@
+import pandas as pd
+import numpy as np
+
 class Univariate():
+    
     def __init__(self,dataset):
         self.dataset = dataset
 
@@ -41,6 +45,8 @@ class Univariate():
             descriptive_analysis.loc["upper_bound",columnName] = descriptive_analysis.loc["Q3:75%"][columnName] + descriptive_analysis.loc["1.5_rule",columnName]
             descriptive_analysis.loc["min",columnName] = dataset[columnName].min()
             descriptive_analysis.loc["max",columnName] = dataset[columnName].max()
+            descriptive_analysis.loc["skew",columnName] = dataset[columnName].skew()
+            descriptive_analysis.loc["kurtosis",columnName] = dataset[columnName].kurtosis()
         return descriptive_analysis
 
     # finding outliers
