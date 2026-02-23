@@ -47,6 +47,8 @@ class Univariate():
             descriptive_analysis.loc["max",columnName] = dataset[columnName].max()
             descriptive_analysis.loc["skew",columnName] = dataset[columnName].skew()
             descriptive_analysis.loc["kurtosis",columnName] = dataset[columnName].kurtosis()
+            descriptive_analysis.loc["Var",columnName] = dataset[columnName].var()
+            descriptive_analysis.loc["Std_dev",columnName] = dataset[columnName].std()
         return descriptive_analysis
 
     # finding outliers
